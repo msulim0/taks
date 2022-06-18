@@ -25,7 +25,7 @@ WHERE paid_at IS NOT NULL
 
 -- FINAL query.
 
-SELECT cms.id, email, min(orders.created_at) AS last_order, category
+SELECT cms.id, email, min(orders.created_at) AS first_order, category
 FROM cms
 INNER JOIN orders
         ON cms.id = orders.user_id
